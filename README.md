@@ -17,7 +17,10 @@ To predict if the annual income of a given set of people is above or below $50K 
     *  Since the output variable is discrete, this problem is a classification problem.
     * The first classification technique used was the Logistic Regression from the SciKit Learn package.
     * 20% of the dataset is set apart as the test set.
-    * For now only Logistic Regression is used. **TODO:** Support Vector Machines, Random Forest, Decision Trees, etc.
+    * Until now I have tried Logistic Regression, and SVM using a linear kernel and polynomial kernel.
+    **TODO:** Random Forest, Decision Trees, etc.
 
 3. Results:
     * Accuracy of the Logistic Regression model is around 82.96%. 
+    * The SVM model with a linear kernel achieves an Accuracy of 82.07%.
+    * With kernel="poly" the SVM model yields an Accuracy of 82.96% but takes a lot of CPU time.
