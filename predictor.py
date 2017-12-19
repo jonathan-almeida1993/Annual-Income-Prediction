@@ -57,3 +57,26 @@ print("Number of correct predictions = {0}".format(correct_predictions))
 print("Number of incorrect predictions = {0}".format(incorrect_predictions))
 print("ACCURACY = {0}".format(correct_predictions/len(y_test)))
 
+
+#----------------------------------------------------------------------------
+#Fitting SVM on the Training set
+from sklearn.svm import SVC
+classifier = SVC(kernel = 'rbf', random_state = 0)
+classifier.fit(X_train, y_train)
+
+#Predict the results on the Test Set
+y_pred = classifier.predict(X_test)
+
+# Making the Confusion Matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+
+correct_predictions = len(y_test[y_test==y_pred]) #cm[0,0]+cm[1,1]
+incorrect_predictions = len(y_test[y_test!=y_pred])#cm[0,1]+cm[1,0]
+print("Number of correct predictions = {0}".format(correct_predictions))
+print("Number of incorrect predictions = {0}".format(incorrect_predictions))
+print("ACCURACY = {0}".format(correct_predictions/len(y_test)))
+
+
+
+
